@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="ro">
+
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ProtoBots</title>
+    <link rel="stylesheet" href="stylehome.css">
+</head>
+
+<body>
+
+    <header class="main-header">
+        <nav class="navbar">
+            <a href="#" class="nav-logo">
+                <span class="logo-icon"><img src="logo.jpeg" alt="SnapTech" style="height: 88px; width: auto;"></span>
+
+            </a>
+
+            <ul class="nav-links">
+                <li><a href="#">Servicii</a></li>
+                <li><a href="#de-ce-snaptech    ">De ce SnapTech</a></li>
+                <li><a href="#sectiune-preturi">Preturi</a></li>
+                <li><a href="#">Resurse</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+
+            <div class="nav-actions">
+                <a href="login.html" class="btn btn-solid">Sign up or Login</a>
+            </div>
+        </nav>
+    </header>
+
+    <section class="services-hero">
+        <div class="carousel-container">
+
+            <button class="carousel-btn prev-btn" onclick="schimbaSlide(-1)"><i
+                    class="fas fa-chevron-left"></i></button>
+            <button class="carousel-btn next-btn" onclick="schimbaSlide(1)"><i
+                    class="fas fa-chevron-right"></i></button>
+
+            <div class="slide active">
+                <div class="slide-content">
+                    <i class="fas fa-server slide-icon"></i>
+                    <h2>Închiriere VPS & Servere Dedicate</h2>
+                    <p>Infrastructură robustă și scalabilă pentru proiectele tale. Servere virtuale private și
+                        echipamente bare-metal configurate pentru performanță maximă, cu acces complet root și uptime
+                        garantat de 99.9%.</p>
+                    <a href="contact.html" class="slide-btn">Programează o consultanță</a>
+                </div>
+            </div>
+
+            <div class="slide">
+                <div class="slide-content">
+                    <i class="fas fa-cloud slide-icon"></i>
+                    <h2>Managed Web Hosting</h2>
+                    <p>Găzduire web optimizată și administrată integral de echipa noastră. Ne ocupăm de securitate,
+                        actualizări, backup-uri zilnice și configurarea SSL-ului, ca tu să te concentrezi exclusiv pe
+                        dezvoltarea aplicațiilor tale.</p>
+                    <a href="contact.html" class="slide-btn">Află mai multe</a>
+                </div>
+            </div>
+
+            <div class="slide">
+                <div class="slide-content">
+                    <i class="fas fa-database slide-icon"></i>
+                    <h2>Database-as-a-Service (DBaaS)</h2>
+                    <p>Medii de baze de date (MySQL, PostgreSQL, MongoDB) gestionate la cheie. Oferim partiționare
+                        eficientă, clustering pentru înaltă disponibilitate și monitorizare avansată a interogărilor în
+                        timp real.</p>
+                    <a href="contact.html" class="slide-btn">Vezi opțiunile</a>
+                </div>
+            </div>
+
+            <div class="slide">
+                <div class="slide-content">
+                    <i class="fas fa-microchip slide-icon"></i>
+                    <h2>Audituri de Securitate Hardware</h2>
+                    <p>Evaluarea vulnerabilităților fizice și de componente pentru dispozitive IoT și sisteme integrate.
+                        Testăm rezistența la atacuri, extragerea firmware-ului și evaluăm integritatea comunicațiilor
+                        fizice interne.</p>
+                    <a href="contact.html" class="slide-btn">Solicită un audit</a>
+                </div>
+            </div>
+
+            <div class="slide">
+                <div class="slide-content">
+                    <i class="fas fa-wifi slide-icon"></i>
+                    <h2>Analiza Protocoalelor Wireless</h2>
+                    <p>Securizare avansată și reverse engineering pentru comunicații fără fir. Analizăm protocoale
+                        vulnerabile utilizând tehnologii SDR (Software Defined Radio), auditând frecvențe Sub-GHz, BLE
+                        și RFID/NFC.</p>
+                    <a href="contact.html" class="slide-btn">Analizează-ți rețeaua</a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
+    <section id="de-ce-snaptech" class="snaptech-container">
+        <div class="snaptech-header">
+            <h2 class="animate-on-scroll">De ce <span class="text-accent">SnapTech</span>?</h2>
+            <p class="animate-on-scroll">Nu oferim doar infrastructură. Construim ecosisteme impenetrabile și scalabile,
+                unde performanța brută întâlnește securitatea de generație următoare la nivel fizic și logic.</p>
+        </div>
+
+        <div class="bento-grid" id="bentoGrid">
+
+            <div class="bento-card card-wide animate-on-scroll">
+                <div class="card-glow"></div>
+                <i class="fas fa-microchip bento-icon"></i>
+                <h3>Securitate Hardware & Wireless</h3>
+                <p class="card-summary">Suntem pionieri în analiza spectrului radio și securizarea protocoalelor.
+                    Protecție avansată de la nivel de siliciu până la transmisiuni aeriene.</p>
+
+                <div class="card-details-wrapper">
+                    <div class="card-details-inner">
+                        <hr>
+                        <h4>Laboratorul Nostru de Analiză</h4>
+                        <p>Abordarea noastră trece dincolo de software. Executăm operațiuni complexe de reverse
+                            engineering, analizând în detaliu manipularea undelor radio și a protocoalelor wireless
+                            vulnerabile. Testăm exhaustiv spectrul de frecvențe sub-GHz, protocoalele BLE (Bluetooth Low
+                            Energy) și comunicațiile RFID/NFC pentru a identifica scurgerile de date înainte ca acestea
+                            să fie exploatate.</p>
+                        <p>Simulăm atacuri reale – de la replay attacks la de-autentificări forțate – folosind
+                            tehnologii SDR (Software Defined Radio) avansate și analizoare logice. Garantăm astfel că
+                            infrastructura și dispozitivele clienților noștri sunt blindate împotriva intruziunilor
+                            fizice sau de proximitate.</p>
+                    </div>
+                </div>
+                <div class="click-to-expand">Apasă pentru a extinde <i class="fas fa-expand-arrows-alt"></i></div>
+            </div>
+
+            <div class="bento-card animate-on-scroll" style="transition-delay: 0.1s;">
+                <div class="card-glow"></div>
+                <i class="fas fa-server bento-icon"></i>
+                <h3>Infrastructură Bare-Metal</h3>
+                <p class="card-summary">Performanță fără compromisuri prin servere dedicate și medii virtualizate
+                    optimizate pentru latență minimă.</p>
+
+                <div class="card-details-wrapper">
+                    <div class="card-details-inner">
+                        <hr>
+                        <h4>Putere de Calcul Pură</h4>
+                        <p>Controlăm arhitectura de la hypervisor până la sistemul de operare. Nu facem overbooking pe
+                            serverele noastre; resursele de procesare, memoria RAM și stocarea NVMe sunt 100% dedicate
+                            instanței tale. Această abordare elimină efectul de "noisy neighbor" și asigură timpi de
+                            răspuns constanți, esențiali pentru procesarea algoritmilor complecși sau găzduirea
+                            ecosistemelor high-traffic.</p>
+                        <p>În plus, rețeaua noastră este protejată de un sistem de mitigare DDoS pe mai multe niveluri,
+                            menținând un uptime garantat chiar și sub trafic malițios masiv.</p>
+                    </div>
+                </div>
+                <div class="click-to-expand">Apasă pentru a extinde <i class="fas fa-expand-arrows-alt"></i></div>
+            </div>
+
+            <div class="bento-card animate-on-scroll" style="transition-delay: 0.2s;">
+                <div class="card-glow"></div>
+                <i class="fas fa-network-wired bento-icon"></i>
+                <h3>Arhitectură DBaaS</h3>
+                <p class="card-summary">Baze de date scalabile instant, cu partiționare inteligentă a tabelelor masive
+                    și redundanță automată.</p>
+
+                <div class="card-details-wrapper">
+                    <div class="card-details-inner">
+                        <hr>
+                        <h4>Gestiunea Avansată a Datelor</h4>
+                        <p>Implementăm și gestionăm medii de baze de date (inclusiv instanțe avansate de MySQL)
+                            structurate pentru a rezista la interogări concurente masive. Ne ocupăm de tunarea
+                            parametrilor de memorie, indexarea corectă și depanarea slow query-urilor.</p>
+                        <p>Fie că este vorba de arhitecturi relaționale clasice sau modele distribuite, configurăm
+                            clusterizarea și replicarea asincronă, garantând că datele tale sunt mereu salvate prin
+                            sisteme de backup criptate pe noduri fizice complet izolate.</p>
+                    </div>
+                </div>
+                <div class="click-to-expand">Apasă pentru a extinde <i class="fas fa-expand-arrows-alt"></i></div>
+            </div>
+
+            <div class="bento-card card-wide animate-on-scroll" style="transition-delay: 0.3s;">
+                <div class="card-glow"></div>
+                <i class="fas fa-fingerprint bento-icon"></i>
+                <h3>Inovație Continuă & Zero Trust</h3>
+                <p class="card-summary">Implementăm o arhitectură „Zero Trust” în tot ceea ce facem, izolând la nivel
+                    micro fiecare proces și instanță.</p>
+
+                <div class="card-details-wrapper">
+                    <div class="card-details-inner">
+                        <hr>
+                        <h4>Filozofia SnapTech</h4>
+                        <p>Securitatea nu este un soft pe care îl instalezi și îl uiți; este un proces activ și
+                            neîntrerupt. Principiul nostru "Zero Trust" dictează că niciun utilizator, serviciu sau
+                            dispozitiv nu are încredere implicită în rețeaua noastră, indiferent de locația sa.</p>
+                        <p>Testăm constant limitele propriilor echipamente într-un regim strict de dezvoltare și
+                            auditare. Construim medii de testare și dezvoltare complet separate (concept de homelab
+                            extins la nivel enterprise), unde experimentăm cu tehnologii noi și implementăm structuri de
+                            tip "sandbox" pentru izolarea eficientă a codului nesigur.</p>
+                    </div>
+                </div>
+                <div class="click-to-expand">Apasă pentru a extinde <i class="fas fa-expand-arrows-alt"></i></div>
+            </div>
+        </div>
+    </section>
+
+
+    <section id="sectiune-preturi" style="max-width: 1400px; margin: 100px auto; padding: 0 20px;">
+
+        <div class="snaptech-header" style="text-align: center; margin-bottom: 20px;">
+            <h2 class="animate-on-scroll">Pachete & <span class="text-accent">Prețuri</span></h2>
+            <p class="animate-on-scroll" style="margin: 0 auto; max-width: 700px;">Performanță garantată și transparență
+                totală. Alege infrastructura care se potrivește perfect cu nevoile proiectului tău.</p>
+        </div>
+
+        <div class="services-container" style="padding-top: 30px;">
+
+            <div class="service-card delay-1">
+                <h3>Închiriere VPS & Servere Dedicate</h3>
+                <p>Resurse de calcul brute și infrastructură de înaltă performanță. Ai control total (root access)
+                    pentru a instala mediile de dezvoltare necesare.</p>
+                <div class="price-tag">9.99€ / lună</div>
+            </div>
+
+            <div class="service-card delay-2">
+                <h3>Managed Web Hosting</h3>
+                <p>Găzduire optimizată și securizată pentru aplicații web și site-uri. Ne ocupăm de configurări,
+                    mentenanță și backup-uri regulate.</p>
+                <div class="price-tag">24.99€ / lună</div>
+            </div>
+
+            <div class="service-card delay-3">
+                <h3>Database-as-a-Service (DBaaS)</h3>
+                <p>Instanțe de baze de date (ex. MySQL) partiționate, securizate și gata de producție, perfecte pentru a
+                    stoca și interoga volume mari de date în siguranță.</p>
+                <div class="price-tag">49.99€ / lună</div>
+            </div>
+
+            <div class="service-card delay-4">
+                <h3>Audit Securitate Hardware</h3>
+                <p>Evaluare avansată a vulnerabilităților pentru dispozitive fizice, echipamente IoT și sisteme
+                    industriale automatizate la nivel de placă de bază.</p>
+                <div class="price-tag">349.99€ / lună</div>
+            </div>
+
+            <div class="service-card delay-5">
+                <h3>Securitate Protocoale Wireless</h3>
+                <p>Penetration testing și securizare pentru comunicații radio. Analizăm vulnerabilitățile rețelelor
+                    wireless, protocoalelor BLE, transmisiilor sub-GHz și SDR.</p>
+                <div class="price-tag">199.99€ / lună</div>
+            </div>
+
+        </div>
+
+        <p class="price-disclaimer">* Prețurile afișate sunt estimative. Costul final poate diferi în mod exact în
+            funcție de complexitatea lucrării, volumul de date și resursele alocate.</p>
+
+    </section>
+
+
+    <footer class="site-footer">
+        <div class="footer-container">
+
+            <div class="footer-brand">
+                <span>SnapTech</span>
+            </div>
+
+            <div class="footer-copyright">
+                Copyright &copy; 2026 SnapTech. Toate drepturile rezervate.
+            </div>
+
+            <div class="footer-socials">
+                <a href="#" class="social-icon" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="social-icon" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="social-icon" aria-label="Google"><i class="fab fa-google"></i></a>
+            </div>
+
+        </div>
+    </footer>
+
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+
+            // ==========================================
+            // 1. SISTEM VERIFICARE LOGIN (Varianta Avansată)
+            // ==========================================
+            const token = localStorage.getItem('authToken');
+            const navActions = document.querySelector('.nav-actions');
+
+            if (token) {
+                try {
+                    const payload = JSON.parse(atob(token.split('.')[1]));
+
+                    // Luăm username-ul pe care l-am pus în token la pasul 2
+                    const usernameReal = payload.username;
+
+                    navActions.innerHTML = `
+            <div class="user-profile" style="display: flex; align-items: center; gap: 20px;">
+                <a href="profil.html" style="text-decoration: none; color: #222222; font-weight: 600; display: flex; align-items: center; gap: 8px; font-size: 16px;">
+                    <i class="fas fa-user-circle" style="font-size: 26px; color: #855525;"></i>
+                    Salut, ${usernameReal}!
+                </a>
+                <button onclick="logout()" class="btn btn-outline" style="padding: 8px 16px; font-size: 14px; cursor: pointer;">Deconectare</button>
+            </div>
+        `;
+                } catch (error) {
+                    console.error("Eroare:", error);
+                }
+            }
+
+            // ==========================================
+            // 2. SISTEM ANIMAȚII SCROLL
+            // ==========================================
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, {
+                threshold: 0.1
+            });
+
+            const hiddenElements = document.querySelectorAll('.animate-on-scroll');
+            if (hiddenElements.length > 0) {
+                hiddenElements.forEach((el) => observer.observe(el));
+            }
+        });
+
+        // ==========================================
+        // 3. FUNCȚIA DE DECONECTARE
+        // ==========================================
+        function logout() {
+            localStorage.removeItem('authToken');
+            localStorage.removeItem('userEmail'); // Pentru siguranță, curățăm tot
+            window.location.reload();
+        }
+
+        // ==========================================
+        // LOGICA PENTRU CARUSELUL DE SERVICII
+        // ==========================================
+        let indexSlideCurent = 0;
+        const slides = document.querySelectorAll('.slide');
+
+        function afiseazaSlide(index) {
+            // Dacă am ajuns la ultimul slide și dăm 'Next', ne întoarcem la primul (0)
+            if (index >= slides.length) {
+                indexSlideCurent = 0;
+            }
+            // Dacă suntem la primul și dăm 'Prev', ne ducem la ultimul
+            else if (index < 0) {
+                indexSlideCurent = slides.length - 1;
+            } else {
+                indexSlideCurent = index;
+            }
+
+            // Ascundem toate slide-urile
+            slides.forEach(slide => {
+                slide.classList.remove('active');
+            });
+
+            // Afișăm doar slide-ul curent
+            slides[indexSlideCurent].classList.add('active');
+        }
+
+        // Funcția care este apelată de butoanele HTML cu parametrul 1 sau -1
+        function schimbaSlide(directie) {
+            afiseazaSlide(indexSlideCurent + directie);
+        }
+
+        // Opțional: Schimbare automată a slide-ului la fiecare 6 secunde
+        // setInterval(() => {
+        //     schimbaSlide(1);
+        // }, 6000);
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                // Oprim comportamentul standard (cel instant)
+                e.preventDefault();
+
+                // Identificăm secțiunea țintă
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+
+                if (targetElement) {
+                    // Animăm scroll-ul
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80, // 80px este înălțimea navbar-ului tău
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const cards = document.querySelectorAll('.bento-card');
+            const overlay = document.getElementById('bentoOverlay');
+
+            // Deschidere card
+            cards.forEach(card => {
+                card.addEventListener('click', function (e) {
+                    // Dacă ai dat click pe butonul X, ignorăm deschiderea
+                    if (e.target.closest('.close-card-btn')) return;
+
+                    // Dacă este deja deschis, nu facem nimic
+                    if (this.classList.contains('is-expanded')) return;
+
+                    // Închidem orice alt card eventual deschis (pentru siguranță)
+                    cards.forEach(c => c.classList.remove('is-expanded'));
+
+                    // Activăm overlay-ul și mărim cardul curent
+                    overlay.classList.add('active');
+                    this.classList.add('is-expanded');
+
+                    // Oprim scroll-ul pe pagina din spate
+                    document.body.style.overflow = 'hidden';
+                });
+            });
+
+            // Închidere card (Click pe butonul X)
+            const closeBtns = document.querySelectorAll('.close-card-btn');
+            closeBtns.forEach(btn => {
+                btn.addEventListener('click', function (e) {
+                    e.stopPropagation(); // Oprim propagarea click-ului către card
+                    inchideToateCardurile();
+                });
+            });
+
+            // Închidere card (Click pe fundalul întunecat)
+            overlay.addEventListener('click', inchideToateCardurile);
+
+            function inchideToateCardurile() {
+                cards.forEach(c => c.classList.remove('is-expanded'));
+                overlay.classList.remove('active');
+                document.body.style.overflow = 'auto'; // Pornim scroll-ul paginii înapoi
+            }
+        });
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const grid = document.getElementById('bentoGrid');
+            const cards = document.querySelectorAll('.bento-card');
+
+            cards.forEach(card => {
+                card.addEventListener('click', function () {
+                    // Dacă apeși pe cardul deja deschis, îl închide la loc
+                    if (this.classList.contains('is-expanded')) {
+                        this.classList.remove('is-expanded');
+                        grid.classList.remove('has-expanded');
+                    } else {
+                        // Dacă e altul, le strânge pe toate...
+                        cards.forEach(c => c.classList.remove('is-expanded'));
+
+                        // ...și îl desface doar pe cel pe care ai dat click
+                        this.classList.add('is-expanded');
+                        // Spunem grilei că un card s-a deschis (ca să le facă pe restul mici și transparente)
+                        grid.classList.add('has-expanded');
+
+                        // Mic scroll fin ca să aducem cardul în centrul vizual
+                        setTimeout(() => {
+                            const yOffset = -100; // Spațiu pentru bara de sus
+                            const y = this.getBoundingClientRect().top + window.scrollY + yOffset;
+                            window.scrollTo({ top: y, behavior: 'smooth' });
+                        }, 300);
+                    }
+                });
+            });
+        });
+
+    </script>
+
+</body>
+
+</html>

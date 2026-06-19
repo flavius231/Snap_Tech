@@ -1,0 +1,125 @@
+/* ========================================= */
+/* RESETARE GENERALĂ                         */
+/* ========================================= */
+* { 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; 
+}
+
+body { 
+    background-color: #fcfbfa; 
+    /* Am scos setările de centrare ca navbar-ul să stea sus! */
+}
+
+/* ========================================= */
+/* BARA DE NAVIGARE                          */
+/* ========================================= */
+.main-header {
+    width: 100%;
+    background-color: #ffffff;
+    padding: 0 40px;
+    
+    border-bottom: none; 
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1400px;
+    margin: 0 auto;
+    height: 80px;
+}
+
+/* LOGO */
+.nav-logo { 
+    display: flex; 
+    align-items: center; 
+    text-decoration: none; 
+    gap: 8px; 
+}
+
+.logo-icon {
+    background: linear-gradient(135deg, #1f0b5c, #00d2ff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    font-size: 28px;
+    font-weight: 900;
+    letter-spacing: -2px;
+}
+
+.logo-text { 
+    font-size: 22px; 
+    font-weight: 700; 
+    color: #222222; 
+}
+
+/* LINK-URI CENTRALE */
+.nav-links { 
+    display: flex; 
+    list-style: none; 
+    gap: 32px; 
+    margin: 0; 
+    padding: 0; 
+}
+
+.nav-links a { 
+    text-decoration: none; 
+    color: #4a4a4a; 
+    font-size: 15px; 
+    font-weight: 500; 
+    transition: color 0.2s ease; 
+}
+
+.nav-links a:hover { 
+    color: #855525
+}
+
+/* BUTOANE DREAPTA */
+.nav-actions { 
+    display: flex; 
+    gap: 15px; 
+    align-items: center; 
+}
+
+.btn { 
+    text-decoration: none; 
+    font-size: 15px; 
+    font-weight: 600; 
+    padding: 10px 24px; 
+    border-radius: 4px; 
+    transition: all 0.2s ease; 
+}
+
+.btn-solid { 
+    background-color: #855525;
+    color: #ffffff; 
+    border: 1px ,solid #855525; 
+}
+
+.btn-solid:hover { 
+    background-color: #855525; 
+    border-color: #855525
+}
+
+/*ANIMATIE DE SCROLL
+/* Starea inițială (elementul este transparent și lăsat mai jos) */
+.animate-on-scroll {
+    opacity: 0;
+    transform: translateY(40px); /* Împins cu 40px mai jos */
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+/* Starea finală (elementul apare și revine la poziția originală) */
+.animate-on-scroll.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+html {
+    scroll-behavior: smooth;
+}

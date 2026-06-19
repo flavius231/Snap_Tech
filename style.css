@@ -1,0 +1,336 @@
+* { 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; 
+}
+
+body { 
+    background-color: #ffffff; /* Fundal complet alb, cum ai cerut */
+    min-height: 100vh; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    padding: 20px;
+}
+
+/* ========================================= */
+/* CONTAINER PRINCIPAL (SPLIT LAYOUT)        */
+/* ========================================= */
+.contact-wrapper {
+    display: flex;
+    max-width: 900px;
+    width: 100%;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15); /* Umbră pentru a evidenția formularul pe fundalul alb */
+    overflow: hidden;
+}
+
+/* ========================================= */
+/* PANOUL DIN STÂNGA (CYAN)                  */
+/* ========================================= */
+.left-box {
+    flex: 1;
+    background-color: #855525;
+    color: #ffffff;
+    padding: 60px 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.left-box h2 {
+    font-size: 36px;
+    font-weight: 800;
+    margin-bottom: 20px;
+}
+
+.left-box p {
+    font-size: 15px;
+    line-height: 1.6;
+    margin-bottom: 25px;
+}
+
+/* ========================================= */
+/* PANOUL DIN DREAPTA (FORMULARUL ALB)       */
+/* ========================================= */
+.right-box {
+    flex: 1.2;
+    background-color: #ffffff;
+    padding: 80px 50px;
+}
+
+.right-box h2 {
+    color: #000000;
+    font-size: 32px;
+    font-weight: 800;
+    text-align: center;
+    margin-bottom: 5px;
+}
+
+.required-text {
+    font-size: 12px;
+    color: #888888;
+    margin-bottom: 20px;
+}
+
+/* ========================================= */
+/* STILIZARE INPUT-URI (STIL IMAGINE)        */
+/* ========================================= */
+.input-group { 
+    margin-bottom: 15px; 
+}
+
+/* Input text, email, datetime */
+.input-group input { 
+    width: 100%; 
+    padding: 15px; 
+    background-color: #f0f0f0; /* Fundal gri deschis */
+    border: none; /* Fără margini */
+    border-radius: 4px; 
+    outline: none; 
+    font-size: 14px;
+    color: #333333;
+    transition: background-color 0.3s;
+}
+
+.input-group input::placeholder {
+    color: #888888;
+    font-weight: 500;
+}
+
+.input-group input:focus {
+    background-color: #e8e8e8; /* Se închide puțin la selectare */
+}
+
+/* ========================================= */
+/* DROPDOWN CUSTOM (Adaptat la noul stil)    */
+/* ========================================= */
+.custom-select { 
+    width: 100%; 
+    background-color: #f0f0f0;
+    border: none;
+    border-radius: 4px; 
+    cursor: pointer; 
+    position: relative; 
+}
+
+.select-header { 
+    padding: 15px; 
+    color: #888888; 
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.select-list-wrapper { 
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    display: grid; 
+    grid-template-rows: 0fr; 
+    transition: grid-template-rows 0.3s ease; 
+    z-index: 10;
+}
+
+.custom-select.open .select-list-wrapper { 
+    grid-template-rows: 1fr; 
+}
+
+.select-list { 
+    overflow: hidden; 
+    list-style: none; 
+    background: #ffffff; 
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    border-radius: 0 0 4px 4px;
+}
+
+.select-list li { 
+    padding: 12px 15px; 
+    font-size: 14px;
+    color: #333333;
+    transition: background 0.2s;
+}
+
+.select-list li:hover { 
+    background: #f0f0f0; 
+    color: #855525;
+}
+
+/* ========================================= */
+/* BUTON SUBMIT                              */
+/* ========================================= */
+.submit-btn { 
+    background-color: #855525;
+    color: #ffffff; 
+    border: none; 
+    border-radius: 30px; /* Colțuri perfect rotunde (pill shape) */
+    padding: 12px 40px; 
+    font-size: 14px;
+    font-weight: 700; 
+    text-transform: uppercase;
+    cursor: pointer; 
+    display: block;
+    margin: 30px auto 0 auto; /* Centrat orizontal */
+    transition: background-color 0.2s ease, transform 0.1s ease; 
+}
+
+.submit-btn:hover { 
+    background-color: #000000; 
+}
+
+.submit-btn:active { 
+    transform: scale(0.98); 
+}
+
+/* ========================================= */
+/* NOTIFICĂRI (TOASTS)                       */
+/* ========================================= */
+.toast-notification {
+    visibility: hidden; 
+    min-width: 280px;
+    background-color: #2e7d32; 
+    color: #ffffff;
+    text-align: center;
+    border-radius: 8px;
+    padding: 16px;
+    position: fixed;
+    z-index: 1000;
+    left: 50%;
+    bottom: 30px; 
+    transform: translateX(-50%) translateY(20px); 
+    font-size: 15px;
+    font-weight: 500;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    transition: opacity 0.4s ease, transform 0.4s ease, visibility 0.4s;
+}
+
+.toast-notification.show {
+    visibility: visible;
+    opacity: 1;
+    transform: translateX(-50%) translateY(0); 
+}
+
+.error-toast {
+    background-color: #d32f2f; 
+}
+
+/* ========================================= */
+/* RESPONSIVITATE (Ecrane mici/Telefoane)    */
+/* ========================================= */
+@media (max-width: 768px) {
+    .contact-wrapper {
+        flex-direction: column; /* Pune formularele unul sub altul pe mobil */
+    }
+    
+    .left-box, .right-box {
+        padding: 40px 30px;
+    }
+}
+
+/* ========================================= */
+/* FUNDAL MODERN ANIMAT (AURORA EFFECT)      */
+/* ========================================= */
+
+body {
+    position: relative;
+    overflow-x: hidden;
+    background-color: #f8f9fa; /* Un fundal de bază foarte deschis */
+    z-index: 0;
+}
+
+/* Sfera luminoasă mov (stânga sus) */
+body::before {
+    content: "";
+    position: fixed;
+    top: -15%;
+    left: -10%;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(199, 78, 3, 0.4) 0%, rgba(125, 59, 11, 0) 70%);
+    filter: blur(90px); /* Efectul de difuzie maximă */
+    z-index: -1;
+    animation: floatLeft 12s ease-in-out infinite alternate;
+}
+
+/* Sfera luminoasă albastră (dreapta jos) */
+body::after {
+    content: "";
+    position: fixed;
+    bottom: -15%;
+    right: -10%;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(239, 116, 2, 0.5) 0%, rgba(0, 210, 255, 0) 70%);
+    filter: blur(90px);
+    z-index: -1;
+    animation: floatRight 15s ease-in-out infinite alternate;
+}
+
+/* Animațiile care le fac să respire/plutească organic pe ecran */
+@keyframes floatLeft {
+    0% { transform: translate(0, 0) scale(1); }
+    100% { transform: translate(8%, 12%) scale(1.15); }
+}
+
+@keyframes floatRight {
+    0% { transform: translate(0, 0) scale(1); }
+    100% { transform: translate(-10%, -15%) scale(1.2); }
+}
+/* ========================================= */
+/* BUTON ÎNAPOI (STIL SUBMIT + ANIMAȚIE)     */
+/* ========================================= */
+.back-btn {
+    position: fixed;
+    top: 30px;
+    left: 30px;
+    display: inline-flex;
+    align-items: center;
+    background-color: #855525;
+    color: #ffffff; 
+    text-decoration: none;
+    border-radius: 30px; /* Formă de pastilă */
+    padding: 12px 30px; /* Padding generos pentru aspect modern */
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    box-shadow: 0 4px 15px rgba(0, 188, 212, 0.3); /* Umbră discretă cyan */
+    transition: background-color 0.3s ease, transform 0.2s ease, padding 0.3s ease;
+    z-index: 100;
+    overflow: hidden;
+}
+
+/* Pregătim săgeata (ascunsă inițial) */
+.back-btn::before {
+    content: "←"; /* Săgeata */
+    display: inline-block;
+    max-width: 0;
+    opacity: 0;
+    white-space: nowrap;
+    transition: max-width 0.3s ease, opacity 0.3s ease, margin-right 0.3s ease;
+}
+
+/* Efectul la Hover */
+.back-btn:hover {
+    background-color: #000000; /* Culoare mai închisă la trecerea mouse-ului */
+    transform: translateY(-2px); /* Se ridică ușor */
+}
+
+/* Apariția săgeții la Hover */
+.back-btn:hover::before {
+    max-width: 20px; /* Se deschide spațiul pentru săgeată */
+    opacity: 1; /* Devine vizibilă */
+    margin-right: 8px; /* Împinge textul puțin spre dreapta */
+}
+
+.back-btn:active {
+    transform: scale(0.98); /* Reacționează la click */
+}
+
+html {
+    scroll-behavior: smooth;
+}

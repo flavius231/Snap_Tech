@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact & Programări</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <a href="home.html" class="back-btn">Acasă</a>
+
+    <div id="toastMessage" class="toast-notification"></div>
+
+    <div class="contact-wrapper">
+        <div class="left-box">
+            <h2>Programare Servicii</h2>
+            <p>Selectează serviciul de care ai nevoie, alege data potrivită pentru o conferință detaliată și completează datele.</p>
+            <p style="font-size: 13px; opacity: 0.8;">Un consultant te va contacta în cel mai scurt timp după confirmarea programării.</p>
+        </div>
+
+        <div class="right-box">
+            <h2>Detalii Programare</h2>
+            <p class="required-text">Toate câmpurile marcate cu steluță (*) sunt obligatorii.</p>
+
+            <form id="programareForm">
+                
+                <div class="input-group">
+                    <input type="email" id="contactEmail" required placeholder="Adresa E-mail *">
+                </div>
+
+                <div class="input-group">
+                    <input type="datetime-local" id="contactData" required>
+                </div>
+
+                <div class="input-group">
+                    <select id="contactServiciu" class="custom-select" style="padding: 15px; outline: none; color: #333;" required>
+                        <option value="" disabled selected>Selectează Serviciul Dorit *</option>
+                        <option value="Închiriere VPS și Servere Dedicate">Închiriere VPS și Servere Dedicate</option>
+                        <option value="Managed Web Hosting">Managed Web Hosting</option>
+                        <option value="Database-as-a-Service (DBaaS)">Database-as-a-Service (DBaaS)</option>
+                        <option value="Audituri de Securitate Hardware">Audituri de Securitate Hardware</option>
+                        <option value="Analiza și Securizarea Protocoalelor Wireless">Analiza și Securizarea Protocoalelor Wireless</option>
+                        <option value="Altele">Altele</option>
+                    </select>
+                </div>
+
+                <div class="input-group">
+                    <textarea id="contactDetalii" rows="3" placeholder="Mențiuni sau detalii suplimentare (Opțional)" style="width: 100%; padding: 15px; background-color: #f0f0f0; border: none; border-radius: 4px; outline: none; font-size: 14px; font-family: inherit; resize: vertical; transition: background-color 0.3s; color: #333;"></textarea>
+                </div>
+
+                <p style="font-size: 11px; color: #888; text-align: center; margin-top: 5px;">
+                    <span style="color: #855525; font-weight: bold;">*</span> Mai multe detalii vor fi furnizate la o conferință stabilită la data programării.
+                </p>
+
+                <button type="submit" class="submit-btn">Trimite Programarea</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Funcție utilitară pentru a arăta mesajele Toast
+            function showToast(message, isError = false) {
+                const toast = document.getElementById('toastMessage');
+                toast.textContent = message;
+                
+                if (isError) {
+                    toast.classList.add('error-toast');
+                } else {
+                    toast.classList.remove('error-toast');
+                }
+                
+                toast.classList.add('show');
+                
+                // Ascunde mesajul după 4 secunde
+                setTimeout(() => {
+                    toast.classList.remove('show');
+                }, 4000);
+            }
+
+            // ==========================================
+            // 1. VERIFICARE LOGIN ȘI AUTO-COMPLETARE EMAIL
+            // ==========================================
+            const token = localStorage.getItem('authToken');
+            const emailInput = document.getElementById('contactEmail');
+
+            if (token) {
+                try {
+                    const payload = JSON.parse(atob(token.split('.')[1]));
+                    if (payload.email) {
+                        emailInput.value = payload.email;
+                        emailInput.readOnly = true; 
+                        // Aplicăm un stil distinct pentru a semnala că nu poate fi modificat
+                        emailInput.style.backgroundColor = "#e0e0e0"; 
+                        emailInput.style.color = "#777777";
+                        emailInput.style.cursor = "not-allowed";
+                    }
+                } catch (error) {
+                    console.error("Eroare la procesarea sesiunii:", error);
+                }
+            }
+
+            // Efect visual pe textarea la focus (ca să se potrivească cu input-urile din CSS)
+            const textarea = document.getElementById('contactDetalii');
+            textarea.addEventListener('focus', () => textarea.style.backgroundColor = '#e8e8e8');
+            textarea.addEventListener('blur', () => textarea.style.backgroundColor = '#f0f0f0');
+
+            // ==========================================
+            // 2. TRIMITEREA FORMULARULUI CĂTRE SERVER
+            // ==========================================
+            document.getElementById('programareForm').addEventListener('submit', async (e) => {
+                e.preventDefault();
+
+                const email = document.getElementById('contactEmail').value;
+                const data = document.getElementById('contactData').value;
+                const serviciu = document.getElementById('contactServiciu').value;
+                const detalii = document.getElementById('contactDetalii').value;
+
+                try {
+                    const response = await fetch('http://localhost:3000/programare-noua', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({ 
+                            email: email, 
+                            data_eveniment: data, 
+                            serviciu: serviciu, 
+                            detaliiSuplimentare: detalii 
+                        })
+                    });
+
+                    const raspuns = await response.json();
+
+                    if (response.ok) {
+                        showToast('Programarea a fost înregistrată cu succes!'); // Folosim noul tău sistem de toast
+                        
+                        if (!emailInput.readOnly) {
+                            document.getElementById('programareForm').reset();
+                        } else {
+                            document.getElementById('contactData').value = "";
+                            document.getElementById('contactServiciu').value = "";
+                            document.getElementById('contactDetalii').value = "";
+                        }
+                    } else {
+                        showToast(raspuns.message, true); // Afișăm eroarea ca toast roșu
+                    }
+                } catch (error) {
+                    console.error(error);
+                    showToast('Eroare de conexiune la server.', true);
+                }
+            });
+        });
+    </script>
+</body>
+</html>
