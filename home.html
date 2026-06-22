@@ -5,7 +5,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ProtoBots</title>
+    <title>SnapTech</title>
     <link rel="stylesheet" href="stylehome.css">
 </head>
 
@@ -19,10 +19,10 @@
             </a>
 
             <ul class="nav-links">
-                <li><a href="#">Servicii</a></li>
-                <li><a href="#de-ce-snaptech    ">De ce SnapTech</a></li>
+                <li><a href="#services-hero">Servicii</a></li>
+                <li><a href="#de-ce-snaptech">De ce SnapTech</a></li>
                 <li><a href="#sectiune-preturi">Preturi</a></li>
-                <li><a href="#">Resurse</a></li>
+                <li><a href="#sectiune-resurse">Resurse</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
 
@@ -32,7 +32,46 @@
         </nav>
     </header>
 
-    <section class="services-hero">
+<section id="sectiune-despre" class="about-minimal-section animate-on-scroll">
+    <div class="about-minimal-container">
+        
+        <div class="about-title-side">
+            <span class="eyebrow-text">Identitate</span>
+            <h2 class="massive-title">Cine<br>suntem.</h2>
+        </div>
+
+        <div class="about-content-side">
+            <p class="lead-text">
+                SnapTech reprezintă convergența exactă dintre infrastructura bare-metal de înaltă performanță și securitatea cibernetică absolută.
+            </p>
+            
+            <p class="regular-text">
+                Născuți din rigoarea ingineriei sistemelor automate și a informaticii aplicate, construim ecosisteme digitale care pur și simplu nu fac compromisuri. De la soluții DBaaS optimizate algoritmic pentru o rutare perfectă a datelor, până la audituri hardware la nivel de tranzistor în laboratoarele noastre.
+            </p>
+
+            <div class="tech-stats">
+                <div class="stat-item">
+                    <span class="stat-number">0</span>
+                    <span class="stat-label">Compromisuri</span>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat-item">
+                    <span class="stat-number"><i class="fas fa-shield-alt"></i></span>
+                    <span class="stat-label">Securitate Hardware</span>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat-item">
+                    <span class="stat-number">100<span style="color:#855525">%</span></span>
+                    <span class="stat-label">Control Total</span>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+
+    <section id="services-hero" class="services-hero">
         <div class="carousel-container">
 
             <button class="carousel-btn prev-btn" onclick="schimbaSlide(-1)"><i
@@ -97,6 +136,7 @@
 
         </div>
     </section>
+
 
 
     <section id="de-ce-snaptech" class="snaptech-container">
@@ -255,6 +295,89 @@
             funcție de complexitatea lucrării, volumul de date și resursele alocate.</p>
 
     </section>
+
+    
+
+    <section id="sectiune-resurse" style="max-width: 1400px; margin: 100px auto; padding: 0 20px;">
+
+        <div class="snaptech-header" style="text-align: center; margin-bottom: 40px;">
+            <h2 class="animate-on-scroll">Infrastructură & <span class="text-accent">Echipamente</span></h2>
+            <p class="animate-on-scroll" style="margin: 0 auto; max-width: 700px;">Transparență totală. Iată resursele
+                hardware fizice și capacitățile tehnice pe care se bazează serviciile SnapTech.</p>
+        </div>
+
+        <div class="filtre-resurse">
+            <button class="filtru-btn activ" data-filter="toate">Toate</button>
+            <button class="filtru-btn" data-filter="datacenter">Data Center & VPS</button>
+            <button class="filtru-btn" data-filter="securitate">Securitate Fizică</button>
+            <button class="filtru-btn" data-filter="retea">Rețelistică & Putere</button>
+        </div>
+
+        <div class="resurse-grid">
+
+            <div class="resursa-card animate-on-scroll" data-category="datacenter">
+                <span class="resursa-tag tag-algoritmi">Servere Bare-Metal</span>
+                <h3>Noduri de Calcul Enterprise</h3>
+                <p>Infrastructura VPS rulează pe servere fizice dedicate, echipate cu stocare NVMe ultra-rapidă și
+                    procesoare multi-core cu frecvență înaltă, garantând zero limitări de performanță pentru aplicațiile
+                    tale.</p>
+                <a href="#" class="resursa-link">Vezi specificațiile <i class="fas fa-arrow-right"></i></a>
+            </div>
+
+            <div class="resursa-card animate-on-scroll delay-1" data-category="securitate">
+                <span class="resursa-tag tag-cybersec">Echipament de Audit</span>
+                <h3>Side-Channel & Fault Injection</h3>
+                <p>Trecem dincolo de analizele clasice. Utilizăm platforme avansate de tip ChipWhisperer pentru a aplica
+                    atacuri de tip „voltage glitching” și analiză termodinamică, extrăgând chei criptografice direct din
+                    microprocesoarele IoT securizate.</p>
+                <a href="#" class="resursa-link">Detalii audit hardware <i class="fas fa-arrow-right"></i></a>
+            </div>
+
+            <div class="resursa-card animate-on-scroll delay-2" data-category="datacenter">
+                <span class="resursa-tag tag-infrastructura">Cluster DBaaS</span>
+                <h3>Medii de Stocare Izolate</h3>
+                <p>Serviciul de Database-as-a-Service (MySQL) utilizează partiții de stocare izolate la nivel fizic, cu
+                    sincronizare automată și redundanță completă pentru a preveni pierderea datelor în orice scenariu.
+                </p>
+                <a href="#" class="resursa-link">Află mai multe <i class="fas fa-arrow-right"></i></a>
+            </div>
+
+            <div class="resursa-card animate-on-scroll" data-category="retea">
+                <span class="resursa-tag tag-algoritmi">Echipamente de Rutare</span>
+                <h3>Switch-uri de Mare Viteză</h3>
+                <p>Conectivitatea este asigurată de switch-uri programabile care rutează pachetele de date folosind
+                    logici optimizate, menținând o latență de sub 1ms între nodurile interne ale rețelei SnapTech.</p>
+                <a href="#" class="resursa-link">Detalii rețea <i class="fas fa-arrow-right"></i></a>
+            </div>
+
+            <div class="resursa-card animate-on-scroll" data-category="securitate">
+                <span class="resursa-tag tag-cybersec">Testare IoT</span>
+                <h3>Laborator Analiză Plăci de Bază</h3>
+                <p>Dispunem de analizoare logice, osciloscoape și stații de lipit cu aer cald pentru a dezasambla, citi
+                    memoriile EEPROM și testa direct la nivel de circuit echipamentele industriale și IoT ale
+                    clienților.</p>
+                <a href="#" class="resursa-link">Vezi laboratorul <i class="fas fa-arrow-right"></i></a>
+            </div>
+
+            <div class="resursa-card animate-on-scroll" data-category="retea">
+                <span class="resursa-tag tag-infrastructura">Power Management</span>
+                <h3>Sisteme de Alimentare Redundante</h3>
+                <p>Protecție totală împotriva fluctuațiilor. Folosim sisteme UPS avansate și modelare exactă a
+                    circuitelor de curent alternativ (CA) pentru a menține componentele la un regim termic și electric
+                    stabil 100%.</p>
+                <a href="#" class="resursa-link">Vezi detaliile tehnice <i class="fas fa-arrow-right"></i></a>
+            </div>
+
+        </div>
+
+        <div class="load-more-container" style="text-align: center; margin-top: 50px;">
+            <button id="btnMaiMulte" class="filtru-btn" style="padding: 14px 35px; font-size: 16px;">
+                Vezi toată infrastructura <i class="fas fa-chevron-down" style="margin-left: 8px;"></i>
+            </button>
+        </div>
+
+    </section>
+
 
 
     <footer class="site-footer">
@@ -467,6 +590,70 @@
                 });
             });
         });
+
+        document.addEventListener('DOMContentLoaded', () => {
+            // Selectăm doar butoanele de filtru din bara de sus (ignorăm butonul 'Vezi mai multe')
+            const butoaneFiltru = document.querySelectorAll('.filtre-resurse .filtru-btn');
+            const carduriResurse = document.querySelectorAll('.resursa-card');
+            const btnMaiMulte = document.getElementById('btnMaiMulte');
+            let grilaExpandata = false;
+
+            // 1. ASCUNDERE INIȚIALĂ: Ascundem cardurile extra (de la indexul 3 în sus)
+            carduriResurse.forEach((card, index) => {
+                if (index >= 3) {
+                    card.classList.add('resursa-ascunsa');
+                }
+            });
+
+            // 2. LOGICA PENTRU BUTONUL "VEZI MAI MULTE"
+            if (btnMaiMulte) {
+                btnMaiMulte.addEventListener('click', () => {
+                    grilaExpandata = true; // Memoram că am deschis grila
+
+                    // Arătăm toate cardurile (deoarece suntem pe categoria 'Toate' inițial)
+                    carduriResurse.forEach(card => card.classList.remove('resursa-ascunsa'));
+
+                    // Ascundem butonul definitiv, nu mai avem nevoie de el
+                    btnMaiMulte.style.display = 'none';
+                });
+            }
+
+            // 3. LOGICA PENTRU BARA DE FILTRE
+            butoaneFiltru.forEach(buton => {
+                buton.addEventListener('click', function () {
+
+                    // Actualizăm aspectul butoanelor (mutăm culoarea activă)
+                    butoaneFiltru.forEach(btn => btn.classList.remove('activ'));
+                    this.classList.add('activ');
+
+                    const filtruSelectat = this.getAttribute('data-filter');
+
+                    // TRUC DE UX: Dacă vizitatorul caută o anumită categorie, deschidem grila automat
+                    // ca să vadă toate articolele, nu doar primele 3.
+                    if (filtruSelectat !== 'toate') {
+                        grilaExpandata = true;
+                        if (btnMaiMulte) btnMaiMulte.style.display = 'none';
+                    }
+
+                    // Aplicăm filtrarea efectivă a cardurilor
+                    carduriResurse.forEach((card, index) => {
+                        const sePotriveste = (filtruSelectat === 'toate' || card.getAttribute('data-category') === filtruSelectat);
+
+                        if (sePotriveste) {
+                            // Dacă suntem pe 'Toate' și grila NU e expandată, menținem ascunse cardurile 4, 5, 6
+                            if (filtruSelectat === 'toate' && !grilaExpandata && index >= 3) {
+                                card.classList.add('resursa-ascunsa');
+                            } else {
+                                card.classList.remove('resursa-ascunsa'); // Îl afișăm
+                            }
+                        } else {
+                            card.classList.add('resursa-ascunsa'); // Nu face parte din categorie, îl ascundem
+                        }
+                    });
+                });
+            });
+        });
+
 
     </script>
 
